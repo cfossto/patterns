@@ -1,7 +1,7 @@
 // Example from GG
 
 import java.io.*
-
+  
 abstract class Vehicle {
   public abstract void printVehicle();
 }
@@ -16,38 +16,42 @@ class FourWheeler extends Vehicle {
   System.out.println("I am a four wheeler!")  
 }
 
+public interface VehicleFactory(){
+  Vehicle createVehicle();
+}
+
+public class TwoWheelerFactory implements Vehiclefactory {
+  public Vehicle createVehicle(){
+    return new TwoWheeler();
+  }
+}
+
+public class FourWheelerFactory implements VehicleFactory {
+  public Vehicle createVehicle(){}
+  return new FourWheeler();
+}
+
+
 class Client {
-  
+
   private Vehicle pVehicle;
 
-  public Client(int type){
-    if (type == 1) {
-      pVehicle = new TwoWheeler();
-    }
-    if (type == 2) {
-      pVehicle = new FourWheeler();
-    }
-    else {
-      pVehicle = null;
-    }
+  public Client(VehicleFactory factory){
+    return factory.createVehicle();
   }
-  public void cleanUp(){
-    if (pVehicle != null){
-      pVehicle = null;
-    }
-  }
+
   public Vehicle getVehicle(){
     return pVehicle;
   }
+  
 }
 
 public class M {
   public static void Main(String[] args){
-    Client = new Client(1);
-    Vehicle pVehicle = client.getVehicle();
-    if (pVehicle != null){
-      pVehicle.printVehicle():
-    }
-    pVehicle.cleanUp();
-  }
+
+    VehicleFactory twoWheelerFactory = new TwoWheelerFactory();
+    Client twoWheelerClient = Client(twoWheelerFactory);
+    Vehicle twoWheeler = twoWheelerClient.getVehicle();
+    twoWheeler.printVehicle();
+    
 }
