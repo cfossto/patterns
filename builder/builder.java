@@ -1,13 +1,16 @@
+// Base class
 public class Employee {
 
+  // Required fields
   private final String name;
   private final int id;
 
+  // Optional fields.
   private final String department;
   private final double salary;
 
 
-  // Private constructor
+  // Private constructor.
   private Employee(Builder builder){
     this.name = builder.name;
     this.id = builder.id;
@@ -15,6 +18,7 @@ public class Employee {
     this.salary = builder.salary
   }
 
+  // Nested class that contains the builder.
   public static class Builder {
 
     private final String name;
