@@ -1,4 +1,10 @@
-// Example from GG
+/*
+This example is from GeeksForGeeks. We are trying an interesting approach here.
+
+1. We define what a vehicle and a vehicle factory is.
+2. We create 2 factories that should return vehicle based on type.
+3. We get vehicles based on type.
+*/
 
 import java.io.*
   
