@@ -23,8 +23,8 @@ is not limited to this.
 from abc import ABC, abstractmethod, ABCMeta
 
 
-# Enforce run method for each command.
 class Command(ABC):
+    """This contract makes sure that every Command-type class has at least a .run() method."""
     @abstractmethod
     def run(self):
         pass
