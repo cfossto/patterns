@@ -38,7 +38,7 @@ class CommandRegistry {
     public static void run(String command_name){
         Command command = registry.get(command_name);
         if (command_name == null){
-            throw new RuntimeException("This is an illegal move!");
+            throw new RuntimeException("Command not found.");
         }
         // Runs the command that is called.
         command.run();
